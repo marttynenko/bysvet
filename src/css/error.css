@@ -1,0 +1,26 @@
+.error-page {
+  padding-top: 220px;
+  padding-bottom: 240px;
+}
+.error-page:last-child {
+  margin-bottom: -40px;
+}
+.error-page-title {margin-bottom: 30px;}
+.error-page-txt {margin-bottom: 40px;}
+.error-page .btn {width: 275px;}
+@media (max-width: 992px) {
+  .error-page {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+@media (max-width: 576px) {
+  .error-page {
+    padding-top: 80px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+  .error-page-title {
+    font-size: 48px;
+  }
+}

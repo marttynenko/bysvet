@@ -1,0 +1,221 @@
+header.header {
+	background: #F1F3F6;
+	margin-bottom: 35px;
+}
+.header-top {
+	padding: 20px 0;
+}
+.header-bottom {
+	padding: 24px 0;
+	border-top: 1px solid #E6E7EA;
+}
+.h-logo,
+.h-catalog {
+	-ms-flex: 0 0 250px;
+	flex: 0 0 250px;
+	max-width: 250px;
+}
+.h-logo {
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
+}
+.h-links {
+	padding: 0px 20px;
+}
+.links-menu {
+	font-weight: 400;
+	@include fz(18);
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0px 12px;
+
+		a {
+			color: $font;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+	}
+}
+.h-contacts {
+	white-space: nowrap;
+	padding: 0px 20px;
+
+	&-icon {
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 1px;
+	}
+}
+.h-phone {
+	vertical-align: middle;
+	margin-right: 7px;
+	color: $font;
+	@include fz(18);
+	font-weight: 700;
+}
+
+.h-btns {
+	.btn-bordered {
+		margin-left: 20px;
+		border: 1px solid rgba(#FFF,.95);
+		background-color: transparent;
+		color: $font;
+		box-shadow: -30px -30px 80px #FFFFFF, 30px 30px 80px rgba(75, 85, 116, 0.1), inset 4px 4px 20px rgba(255, 255, 255, 0.5);
+
+		&:hover {
+			background-color: #fff;
+		}
+	}
+	
+}
+.btn-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 8px;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: -2px;
+
+	&-user {
+		background: $primary;
+		border-radius: 50%;
+		padding: 5px;
+		z-index: 1;
+
+		svg {
+			position: relative;
+			z-index: 2;
+		}
+
+		.btn-triangle {
+			position: absolute;
+			width: 48px;
+			height: 55px;
+			top: 34%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: url(../images/bgs/triangle-1.svg) center no-repeat;
+			background-size: contain;
+			filter: drop-shadow(3px 3px 5px rgba(#000,.35))
+		}
+	}
+	&-notifies {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		top: -5px;
+		right: -5px;
+		background: $primary;
+		border-radius: 50%;
+		line-height: 16px;
+		text-align: center;
+		color: $font;
+		font-weight: 700;
+		font-style: normal;
+		@include fz(11);
+	}
+}
+.h-catalog {
+	position: relative;
+}
+.catalog-toggler {
+	position: relative;
+	display: block;
+
+	&-lines {
+		position: absolute;
+		left: 20px;
+		top: 50%;
+		margin-top: -7px;
+		width: 22px;
+		height: 14px;
+
+		& > div {
+			position: absolute;
+			height: 2px;
+			background: #FFF;
+			transition: transform .3s;
+			top: 50%;
+			margin-top: -1px;
+			width: 100%;
+			filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.25));
+		}
+		.mm-1 {
+			transform: translateY(-6px);
+			width: 16px;
+		}
+		.mm-3 {
+			transform: translateY(6px);
+			width: 16px;
+		}
+	}
+	&-arrow {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		right: 25px;
+		top: 50%;
+		margin-top: -6px;
+		z-index: 1;
+	}
+	&-triangle {
+		position: absolute;
+		width: 65px;
+		height: 100px;
+		right: -5px;
+		top: 100%;
+		left: 90%;
+		transform: translate(-50%,-50%);
+		background: url(../images/bgs/triangle-2.svg) center no-repeat;
+		background-size: contain;
+		z-index: -1;
+		filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.35));
+	}
+}
+.svg-h-cart {
+	fill: $secondary;
+}
+.h-search {
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+	margin-left: 20px;
+}
+.header-search {
+	display: block;
+	position: relative;
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: 17px;
+		top: 50%;
+		margin-top: -12px;
+		width: 24px;
+		height: 24px;
+		background: url(../images/svg/glass.svg) center no-repeat;
+		background-size: contain;
+	}
+
+	input#{&}-input {
+		width: 100%;
+		padding-left: 55px;
+		padding-right: 170px;
+	}
+	button#{&}-btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 150px;
+		border-radius: 0px 4px 4px 0px;
+	}
+}

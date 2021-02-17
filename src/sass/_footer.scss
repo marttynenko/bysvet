@@ -1,0 +1,118 @@
+footer.footer {
+  background: $gray;
+  color: #333;
+
+  a {
+    color: #333;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.footer-top,
+.footer-middle {
+  padding: 30px 0;
+  border-bottom: 1px solid #E6E7EA;
+}
+.f-contacts {
+  @include fz(18);
+  font-weight: 400;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  &-group {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  &-item {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+
+    &-icon {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 25px;
+      height: 24px;
+    }
+  }
+}
+
+.f-copy,
+.f-complaints {
+  max-width: 420px;
+  margin-bottom: 25px;
+}
+.f-copy {
+  border-bottom: 1px solid #E6E7EA;
+  padding-bottom: 10px;
+}
+.f-complaints {
+  position: relative;
+  padding-left: 110px;
+  @include fz(14);
+
+  &-icon {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    top: 0;
+  }
+  p {
+    margin-bottom: 12px;
+  }
+}
+.f-menu {
+  line-height: 1.25;
+  margin-bottom: 20px;
+  padding-right: 15px;
+
+  &-title {
+    margin-bottom: 30px;
+    @include fz(18);
+    font-weight: 700;
+    color: #333;
+  }
+  li {
+    margin-bottom: 14px;
+  }
+}
+
+.footer-bottom {
+  padding: 20px 0;
+}
+.f-paysys {
+  &-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 29px;
+  }
+}
+.f-dev {
+  font-weight: 400;
+
+  &-link {
+    display: inline-block;
+    position: relative;
+    padding-right: 35px;
+    margin-right: 9px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -2px;
+      width: 25px;
+      height: 37px;
+      background: url(../images/svg/farba.svg) center no-repeat;
+      background-size: contain;
+    }
+  }
+}
