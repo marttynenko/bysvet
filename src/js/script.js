@@ -159,9 +159,6 @@ const Store = {
 }
 
 
-
-
-
 jQuery(document).ready(function($){
 
 	$('.slick-top').slick({
@@ -291,7 +288,43 @@ jQuery(document).ready(function($){
 			$(this).val(0);
 		}
 	});
-		
+
+
+	//отображаем скрытые фильтры
+	$(document).on('click','.filters-variants-toggler',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		const variants = $(this).prev('.filters-variants');
+
+		if (this.isCollapsed === undefined) {
+			variants.find('.hidden-variant').addClass('visible')
+			this.isCollapsed = $(this).find('a').text()
+			$(this).find('a').text('Свернуть')
+		} else {
+			variants.find('.hidden-variant').removeClass('visible')
+			$(this).find('a').text(this.isCollapsed)
+			this.isCollapsed = undefined
+		}
+	})
+
+
+	//переключаем режимы отображения каталога
+	$(document).on('click','.catalog-style-link',function(e) {
+		e.preventDefault();
+		if ($(this).hasClass('active')) {return}
+
+		const style = $(this).attr('data-style') || 'grid';
+		$('.catalog-style-link').removeClass('active');
+		$(this).addClass('active');
+		$('.catalog-list').attr('data-style',style)
+		localStorage.setItem('catalogStyle',style)
+	})
+	if (localStorage.getItem('catalogStyle')) {
+		const style = localStorage.getItem('catalogStyle')
+		$('.catalog-list').attr('data-style',style)
+		$('.catalog-style-link').removeClass('active');
+		$('.catalog-style-link[data-style="'+style+'"]').addClass('active');
+	}
 
 
 
@@ -482,7 +515,7 @@ jQuery(document).ready(function($){
 
 	//стилизация элементов форм
 	$('input[type="checkbox"], input[type="radio"], input[type="file"], select').not('.not-styler').styler({
-		singleSelectzIndex: '1',
+		// singleSelectzIndex: '1',
 	});
 	
 

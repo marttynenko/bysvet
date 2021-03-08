@@ -91,7 +91,7 @@ exports.svg = svg;
 exports.styles = styles;
 // exports.sprite = sprite;
 exports.default = function() {
-    watch('src/sass/**/*.scss', series(sprite, styles));
+    watch('src/sass/**/*.scss', styles);
     // watch('src/images/icons/*.png', sprite);
     watch('src/images/svg/*.svg', svg);
   };

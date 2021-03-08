@@ -64,7 +64,7 @@ $basefont: 'Exo 2';
 $sans: 'Source Sans Pro';
 $lh: 1.42;
 $th: (23/14);
-$paragraph_margin: 0px 0px 28px;
+$paragraph_margin: 0px 0px 22px;
 
 // headings
 $headings_font_family: $basefont;
@@ -83,11 +83,11 @@ $block_heading_font_size: 24;
 $block_heading_font_weight: 700;
 
 // article typography
-$article_font_size: 14;
+$article_font_size: 16;
 $article_line_height: (22/$article_font_size);
 $article_paragraph_margin: $paragraph_margin;
 $article_img_margin: $paragraph_margin;
-$article_font_weight: 400;
+$article_font_weight: $weight;
 
 
 // Buttons & Inputs ---
@@ -108,8 +108,8 @@ $input_paddings: 0px 15px;
 $input_border_radius: $btn_border_radius;
 $input_bg: #FFF;
 
-$checkbox_size: 18px;
-$checkbox_border_radius: 4px;
+$checkbox_size: 24px;
+$checkbox_border_radius: 3px;
 $radio_size: $checkbox_size;
 
 
