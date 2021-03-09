@@ -517,6 +517,9 @@ jQuery(document).ready(function($){
 	$('input[type="checkbox"], input[type="radio"], input[type="file"], select').not('.not-styler').styler({
 		// singleSelectzIndex: '1',
 	});
+
+
+	// document.querySelectorAll('a').addEventListener('click',clickHandler)
 	
 
 	//подгружаем библиотеку и иниц. маску
