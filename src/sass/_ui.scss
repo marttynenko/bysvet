@@ -579,8 +579,9 @@ select {
   }
 }
 textarea {
+	display: block;
 	padding: 10px 15px;
-	border: 2px solid $input_border;
+	border: 1px solid $input_border;
 	width: 100%;
 	height: auto;
 	resize: none;
@@ -857,9 +858,10 @@ input[type="reset"].block {
 	display: inline-block;
 	margin-right: 23px;
 }
-.label-block {
+.label-block,
+.ui-label {
 	display: block;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 }
 .label-square {
 	position: relative;
@@ -923,7 +925,7 @@ input[type="reset"].block {
 }
 .reply-field,
 .ui-field {
-	padding-bottom: 45px;
+	padding-bottom: 20px;
 
 	input,
 	.jq-selectbox,

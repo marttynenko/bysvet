@@ -61,6 +61,11 @@ $reverseBreakpoints: reverse($breakpoints);
         margin-left: (100% / 12 * $i);
       }
     }
+    .col-#{$name}-20 {
+      -ms-flex: 0 0 20%;
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
     @if ($name == "md" or $name == "us") {
       .inner, .container {
         max-width: 100%;

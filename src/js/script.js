@@ -319,7 +319,7 @@ jQuery(document).ready(function($){
 		$('.catalog-list').attr('data-style',style)
 		localStorage.setItem('catalogStyle',style)
 	})
-	if (localStorage.getItem('catalogStyle')) {
+	if (localStorage.getItem('catalogStyle') && $('.catalog-settings').length) {
 		const style = localStorage.getItem('catalogStyle')
 		$('.catalog-list').attr('data-style',style)
 		$('.catalog-style-link').removeClass('active');

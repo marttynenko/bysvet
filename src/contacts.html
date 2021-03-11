@@ -1,0 +1,169 @@
+<!--#include file="inc-header.html"-->
+
+<h1 class="page-title">Контакты</h1>
+
+<div class="contacts-items">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="h3">Интернет-магазин BYSVET.BY</div>
+      <div class="row">
+        <div class="col-us-6">
+          <div class="h6">Физическим лицам</div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-phone"></use></svg></i>
+            <a href="tel:+375173501162">+375 17 350-11-62</a>
+            <svg class="sprite svg-inline svg-contact"><use xlink:href="svg/svg/symbols.svg#telegram"></use></svg>
+            <svg class="sprite svg-inline svg-contact"><use xlink:href="svg/svg/symbols.svg#viber"></use></svg>
+          </div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-phone"></use></svg></i>
+            <a href="tel:+375253501162">+375 25 350-11-62</a>
+          </div>
+          <hr class="ui-hr">
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-mail"></use></svg></i>
+            <a href="mailto:sale@bysvet.by">sale@bysvet.by</a>
+          </div>
+        </div>
+        <div class="col-us-6">
+          <div class="h6">Юридическим лицам</div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-phone"></use></svg></i>
+            <a href="tel:+375173501162">+375 17 350-11-62</a>
+            <svg class="sprite svg-inline svg-contact"><use xlink:href="svg/svg/symbols.svg#whatsap"></use></svg>
+          </div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-phone"></use></svg></i>
+            <a href="tel:+375253501162">+375 25 350-11-62</a>
+          </div>
+          <hr class="ui-hr">
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-mail"></use></svg></i>
+            <a href="mailto:opt@bysvet.by">opt@bysvet.by</a>
+          </div>
+        </div>
+      </div>
+    </div><!--.col-->
+
+    <div class="col-md-6">
+      <h3>Торговый дом </h3>
+      <div class="row">
+        <div class="col-us-6">
+          <div class="h6">Контакты</div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-pin"></use></svg></i>
+            220004, г. Минск, ул. Амураторская, 7
+          </div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-phone"></use></svg></i>
+            <a href="tel:+375253501162">+375 25 350-11-62</a>, <a href="tel:+375251123362">+375 25 112-331-62</a>
+          </div>
+          <hr class="ui-hr">
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-mail"></use></svg></i>
+            <a href="mailto:td@beltiz.by">td@beltiz.by</a>
+          </div>
+        </div>
+
+        <div class="col-us-6">
+          <div class="h6">Реквизиты</div>
+          <div class="contact-item">
+            <i class="contact-item-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#c-info"></use></svg></i>
+            Торговое частное унитарное предприятие «Торговый дом «БелТИЗ»<br>
+            Юр. адрес: Республика Беларусь, 220004, 
+            г. Минск, ул. Амураторская, 7, офис 5.<br>
+            р/с – BY51AKBB30120000359915100000 в ЦБУ №510 ОАО "АСБ Беларусбанк" 
+            г. Минск, БИК AKBBBY2X.<br>
+            УНП 190504462, ОКПО 376304575000
+          </div>
+        </div>
+      </div>
+    </div><!--.col-->
+
+  </div>
+</div><!--.contacts-items-->
+
+
+<div class="contacts-cols">
+  <div class="row">
+    
+    <div class="col-md-4">
+      <div class="contacts-form">
+        <form id="contacts_form" novalidate>
+          <div class="contacts-form-head ui-centered">
+            <div class="h3">Напишите нам</div>
+            <p>Наши менеджеры проконсультируют вас по любому вопросу</p>
+          </div>
+
+          <div class="ui-field">
+            <label for="name" class="ui-label">Ваше имя</label>
+            <input type="text" class="ui-input" name="name" required>
+          </div>
+
+          <div class="ui-field">
+            <label for="email" class="ui-label">Ваше email</label>
+            <input type="email" class="ui-input" name="email" required>
+          </div>
+
+          <div class="ui-field">
+            <label for="msg" class="ui-label">Ваше сообщение</label>
+            <textarea name="msg" rows="3" class="ui-input"></textarea>
+          </div>
+
+          <div class="contacts-form-accept">Нажимая кнопку "Отправить" вы соглашаетесь с условиями <a href="#">пользовательского соглашения</a></div>
+
+          <button class="btn btn-block">Отправить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="contacts-map" id="contacts-map"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+	window.onload = function(){
+		var script = document.createElement('script');
+		script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+		document.body.appendChild(script);
+
+		script.onload = function(){
+			ymaps.ready(function () {
+				var myMap = new ymaps.Map("contacts-map", {
+	        center: [53.911179, 27.529411],
+	        zoom: 14
+				});
+
+				myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            hintContent: '«Торговый дом «БелТИЗ»',
+            balloonContent: 'Республика Беларусь, 220004, г. Минск, ул. Амураторская, 7,'
+        });
+
+				myMap.geoObjects.add(myPlacemark); // Размещение геообъекта на карте.	
+
+				//отрубаем скролл карты мышью
+				myMap.behaviors.disable('scrollZoom');
+				// myMap.behaviors.disable('drag');
+
+				myMap.container.events.add('fullscreenenter', function(){
+				  myMap.behaviors.enable(['scrollZoom']);
+				});
+				myMap.container.events.add('fullscreenexit', function(){
+				  myMap.behaviors.disable(['scrollZoom']);
+				});
+			});
+		}
+
+    $('#contacts_form').validate({
+      rules: {
+        email: {
+          email: true
+        }
+      }
+    })
+	}
+</script>
+
+<!--#include file="inc-footer.html"-->
