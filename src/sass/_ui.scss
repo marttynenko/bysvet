@@ -505,23 +505,23 @@ textarea {
 }
 
 
-input[type="text"],
-input[type="tel"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="url"],
-input[type="date"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="week"],
-input[type="color"],
+// input[type="text"],
+// input[type="tel"],
+// input[type="password"],
+// input[type="email"],
+// input[type="number"],
+// input[type="search"],
+// input[type="url"],
+// input[type="date"],
+// input[type="time"],
+// input[type="datetime"],
+// input[type="datetime-local"],
+// input[type="month"],
+// input[type="week"],
+// input[type="color"],
 input.ui-input,
-textarea,
-select {
+textarea.ui-input,
+select.ui-input {
 	font-family: $basefont;
 	background: $input_bg;
 	color: $font;
@@ -568,6 +568,14 @@ select {
   		border-color: $input_border;
   	}
   }
+	&[readonly] {
+  	border: 1px solid $input_border;
+		background: #fbfbfb;
+
+  	&:hover, &:focus {
+  		border-color: $input_border;
+  	}
+  }
   &.no-border {
   	border: 1px solid transparent;
   }
@@ -578,7 +586,7 @@ select {
   	color: $primary;
   }
 }
-textarea {
+textarea.ui-input {
 	display: block;
 	padding: 10px 15px;
 	border: 1px solid $input_border;
@@ -861,7 +869,13 @@ input[type="reset"].block {
 .label-block,
 .ui-label {
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 6px;
+
+	&-invisible {
+		user-select: none;
+		opacity: 0;
+		visibility: hidden;
+	}
 }
 .label-square {
 	position: relative;

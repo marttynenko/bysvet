@@ -1,0 +1,216 @@
+<!--#include file="inc-header.html"-->
+
+<div class="layout row">
+  <aside class="col-sidebar">
+    <div class="ui-menu">
+      <div class="h5 ui-menu-title">Ваш кабинет</div>
+      <ul>
+        <li><a href="#">Личные данные</a></li>
+        <li><a href="#">История заказов</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="col-content">
+    <h1 class="page-title">Личные данные</h1>
+    <hr class="ui-hr"></hr>
+    <div class="profile-data">
+      <div class="profile-data-header">
+        <div class="h3">Общая информация</div>
+        <a href="#" class="profile-data-link"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#edit"></use></svg><span>Редактировать</span></a>
+      </div>
+
+      <form id="profile_data">
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Контактное лицо</div>
+              <input type="text" class="ui-input profile-data-input" name="contact" readonly value="Иван">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Номер телефона</div>
+              <input type="tel" class="ui-input profile-data-input mask-phone" name="phone" readonly value="+375 44 703-98-17">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Ваш email (логин)</div>
+              <input type="email" class="ui-input profile-data-input" name="phone" readonly value="mail@mail.ru">
+            </div>
+          </div>
+        </div>
+
+        <hr class="ui-hr"></hr>
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Название организации</div>
+              <input type="text" class="ui-input profile-data-input" name="organization" readonly value="ТЧУП Торговый дом &quot;БелТИЗ&quot;">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Юр. адрес</div>
+              <input type="text" class="ui-input profile-data-input" name="orgadres" readonly value="г. Минск, ул. Амураторская, 7, оф. 5">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">УНП</div>
+              <input type="text" class="ui-input profile-data-input" name="unp" readonly value="23423312425124123">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Пункт разгрузки</div>
+              <input type="text" class="ui-input profile-data-input" name="cargo" readonly value="г. Минск, ул. Амураторская, 7, оф. 5">
+            </div>
+          </div>
+        </div><!--.row-->
+
+        <hr class="ui-hr"></hr>
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Наименование банка</div>
+              <input type="text" class="ui-input profile-data-input" name="bankname" readonly value="ОАО &quot;Альфа Банк&quot;">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Адрес банка</div>
+              <input type="text" class="ui-input profile-data-input" name="bankadres" readonly value="г. Минск, ул. Крапоткина 29В">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">BIC</div>
+              <input type="text" class="ui-input profile-data-input" name="bancbic" readonly value="FDFSD2232">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">IBAN</div>
+              <input type="text" class="ui-input profile-data-input" name="bankiban" readonly value="32467841234325">
+            </div>
+          </div>
+        </div><!--.row-->
+
+        <hr class="ui-hr"></hr>
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">ФИО руководителя</div>
+              <input type="text" class="ui-input profile-data-input" name="director" readonly value="Иванов Иван Иванович">
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">На основании чего действует</div>
+              <input type="text" class="ui-input profile-data-input" name="document" readonly value="Устав">
+            </div>
+          </div>
+        </div><!--.row-->
+
+        <div class="profile-data-submit">
+          <div class="row">
+            <div class="col-sm-4 col-us-6">
+              <button class="btn btn-block">Сохранить</button>
+            </div>
+          </div>
+          
+        </div>
+      </form>
+      
+    </div><!--.data-->
+
+    <hr class="ui-hr"></hr>
+
+    <div class="profile-pass">
+      <div class="h3">Смена пароля</div>
+
+      <form id="profile_password">
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <label for="pass" class="ui-label">Новый пароль</label>
+              <input type="password" id="pass" name="pass" class="ui-input" placeholder="Не менее 6 символов" minlength="6" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <label for="pass_retry" class="ui-label">Повторите пароль</label>
+              <input type="password" id="pass_retry" name="pass_retry" class="ui-input" placeholder="Не менее 6 символов" minlength="6" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-invisible">Фикс отступа</label>
+              <button class="btn btn-block">Сохранить</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded",function(){
+    
+    document.querySelector('.profile-data-link').addEventListener('click',function(e) {
+      e.preventDefault();
+ 
+      document.querySelectorAll('.profile-data-input').forEach(el => {
+        if (el.readOnly === true) {
+          el.readOnly = false
+          document.querySelector('.profile-data-submit').style.display = 'block'
+        } else {
+          el.readOnly = true
+          document.querySelector('.profile-data-submit').style.display = 'none'
+        }
+      })
+    })
+
+
+    $('#profile_data').validate({
+      rules: {
+        phone: {
+          telephone: true
+        },
+        email: {
+          email: true
+        }
+      }
+    })
+
+
+    $('#profile_password').validate({
+      rules: {
+        pass_retry: {
+          equalTo: '#pass'
+        }
+      }
+    })
+  });
+</script>
+
+<!--#include file="inc-footer.html"-->

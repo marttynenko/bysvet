@@ -210,6 +210,19 @@ header.header {
 		width: 100%;
 		padding-left: 55px;
 		padding-right: 170px;
+		font-family: $basefont;
+		background: $input_bg;
+		color: $font;
+		border: 1px solid $input_border;
+		height: $input_height;
+		max-width: 100%;
+		@include fz($fontsize);
+		@if $input_border_radius > 0 {
+			-webkit-border-radius: $input_border_radius;
+			border-radius: $input_border_radius;
+		}
+		outline: none !important;
+		transition: border .3s, box-shadow .4s;
 	}
 	button#{&}-btn {
 		position: absolute;

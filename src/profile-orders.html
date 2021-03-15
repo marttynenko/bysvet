@@ -1,0 +1,113 @@
+<!--#include file="inc-header.html"-->
+
+<div class="layout row">
+  <aside class="col-sidebar">
+    <div class="ui-menu">
+      <div class="h5 ui-menu-title">Ваш кабинет</div>
+      <ul>
+        <li><a href="#">Личные данные</a></li>
+        <li><a href="#">История заказов</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="col-content">
+    <h1 class="page-title">История заказов</h1>
+
+    <table class="orders">
+      <thead>
+        <tr>
+          <th class="orders-date">Дата заказа</th>
+          <th class="orders-number">Номер заказа</th>
+          <th class="orders-goods">Товары</th>
+          <th class="orders-sum">Сумма, р.</th>
+          <th class="orders-status">Статус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="orders-date">05.01.2021<br>в 17:42</td>
+          <td class="orders-number">
+            <a href="#">0502312-1</a>
+          </td>
+          <td class="orders-goods">
+            <div class="orders-goods-list">
+              <div class="orders-goods-item">Светодиодная лампа "Светлячок" х 2 шт.</div>
+              <div class="orders-goods-item">Удлинитель El Passo х 1 шт.</div>
+              <div class="orders-goods-item">Светодиодная лампа "Магия" х 15 шт.</div>
+              <div class="orders-goods-item">Кабель медный 3.5мм/1м x 20</div>
+              <div class="orders-goods-item">Выключатель двухклавишный Торео x 4 шт.</div>
+            </div>
+            <a href="#" class="orders-goods-toggler">Показать все товары</a> 
+          </td>
+          <td class="orders-sum">152,60</td>
+          <td class="orders-status">Оплачен</td>
+        </tr>
+
+        <tr>
+          <td class="orders-date">05.01.2021<br>в 17:42</td>
+          <td class="orders-number">
+            <a href="#">0502312-2</a>
+          </td>
+          <td class="orders-goods">
+            <div class="orders-goods-list">
+              <div class="orders-goods-item">Светодиодная лампа "Светлячок" х 2 шт.</div>
+              <div class="orders-goods-item">Удлинитель El Passo х 1 шт.</div>
+            </div>
+          </td>
+          <td class="orders-sum">23,60</td>
+          <td class="orders-status">Доставлен</td>
+        </tr>
+
+        <tr>
+          <td class="orders-date">05.01.2021<br>в 17:42</td>
+          <td class="orders-number">
+            <a href="#">0502312-3</a>
+          </td>
+          <td class="orders-goods">
+            <div class="orders-goods-list">
+              <div class="orders-goods-item">Светодиодная лампа "Светлячок" х 2 шт.</div>
+            </div>
+          </td>
+          <td class="orders-sum">15,60</td>
+          <td class="orders-status">Отменен</td>
+        </tr>
+
+        <tr>
+          <td class="orders-date">05.01.2021<br>в 17:42</td>
+          <td class="orders-number">
+            <a href="#">0502312-4</a>
+          </td>
+          <td class="orders-goods">
+            <div class="orders-goods-list">
+              <div class="orders-goods-item">Кабель алюминиевый 4.5мм/1м х 1000 шт.</div>
+            </div>
+          </td>
+          <td class="orders-sum">1210,00</td>
+          <td class="orders-status">Доставлен</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    const togglers = document.querySelectorAll('.orders-goods-toggler')
+    togglers.forEach(el => {
+      el.addEventListener('click',function(e){
+        e.preventDefault();
+        const list = el.previousElementSibling
+        if (el.textContent === 'Показать все товары') {
+          el.textContent = 'Cкрыть'
+          list.classList.add('collapsed')
+        } else {
+          el.textContent = 'Показать все товары'
+          list.classList.remove('collapsed')
+        }
+      })
+    })
+  })
+</script>
+
+<!--#include file="inc-footer.html"-->
