@@ -937,10 +937,12 @@ input[type="reset"].block {
 	color: $red;
 	font-style: normal;
 }
-.reply-field,
 .ui-field {
 	padding-bottom: 20px;
 
+	&-btn {
+		padding-top: 10px;
+	}
 	input,
 	.jq-selectbox,
 	select {

@@ -1943,3 +1943,68 @@ table.order {
 .order-total {
 	@include fz(22);
 }
+
+.cert-list {
+	margin-bottom: 50px;
+}
+.cert-item {
+	position: relative;
+	display: block;
+	padding-left: 78px;
+	margin-bottom: 30px;
+	min-height: 60px;
+	color: $font;
+	padding-right: 15px;
+
+	&:hover {
+		color: $secondary;
+	}
+
+	&-icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 60px;
+		height: 60px;
+
+		svg {
+			fill: $secondary;
+		}
+	}
+}
+
+.quality-certs {
+	margin-bottom: 50px;
+}
+.quality-cert {
+	margin-bottom: 35px;
+	
+	&-img {
+		display: block;
+		position: relative;
+		height: 0;
+		padding-bottom: 135%;
+		background: $gray;
+		overflow: hidden;
+		margin-bottom: 18px;
+		line-height: 0;
+
+		img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+			max-height: 90%;
+			max-width: 90%;
+			transition: transform .5s;
+			display: block;
+		}
+		&:hover {
+			img {
+				-ms-transform: translate(-50%,-50%) scale(0.97);
+				transform: translate(-50%,-50%) scale(0.97);
+			}
+		}
+	}
+}

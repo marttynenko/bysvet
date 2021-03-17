@@ -243,18 +243,19 @@ jQuery(document).ready(function($){
 		})
 	});
 
-	lazyLibraryLoad(
-		'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js',
-		'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css',
-		() => {
-			$(".slick-card").lightGallery({
-				selector: 'a.lightgallery',
-				download: false
-			});
-			
-		}
-	)
-
+	if ($('.slick-card').length) {
+		lazyLibraryLoad(
+			'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js',
+			'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css',
+			() => {
+				$(".slick-card").lightGallery({
+					selector: 'a.lightgallery',
+					download: false
+				});
+			}
+		)
+	}
+	
 
 	//увеличиваем значение
 	$(document).on('click', '.ui-amount-plus', function(){
@@ -324,6 +325,20 @@ jQuery(document).ready(function($){
 		$('.catalog-list').attr('data-style',style)
 		$('.catalog-style-link').removeClass('active');
 		$('.catalog-style-link[data-style="'+style+'"]').addClass('active');
+	}
+
+
+	if ($('.gallery').length) {
+		lazyLibraryLoad(
+			'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js',
+			'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css',
+			() => {
+				$(".gallery").lightGallery({
+					selector: 'a.gallery-link',
+					download: false
+				});
+			}
+		)
 	}
 
 
@@ -468,7 +483,7 @@ jQuery(document).ready(function($){
 				open: function () {
 					setTimeout(function(){
 						$('.mfp-wrap').addClass('not_delay');
-						$('.white-popup').addClass('not_delay');
+						$('.mfp-popup').addClass('not_delay');
 					},700);
 				}
 		  }
