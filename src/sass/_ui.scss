@@ -583,7 +583,7 @@ select.ui-input {
   	color: $red;
   }
   &.valid {
-  	color: $primary;
+  	// color: $primary;
   }
 }
 textarea.ui-input {
@@ -609,11 +609,11 @@ textarea.ui-input {
 }
 .valid {
 	border-color: $valid !important;
-	color: $valid !important;
+	// color: $valid !important;
 
 	* {
 		border-color: $valid !important;
-		color: $valid !important;
+		// color: $valid !important;
 	}
 	.jq-selectbox__trigger-arrow {
 		  border-color: #000 transparent transparent transparent !important;
@@ -870,6 +870,7 @@ input[type="reset"].block {
 .ui-label {
 	display: block;
 	margin-bottom: 6px;
+	color: $font_2;
 
 	&-invisible {
 		user-select: none;
@@ -1313,7 +1314,7 @@ input[type="reset"].block {
 .dotted-link, .link-dotted {
 	/*color: $font;*/
 	/*padding-bottom: 1px;*/
-	border-bottom: 1px dotted $link_border;
+	border-bottom: 1px dotted;
 	text-decoration: none;
 
 	&:hover {
@@ -1322,12 +1323,19 @@ input[type="reset"].block {
 	}
 }
 .link-dashed {
-	border-bottom: 1px dashed rgba($font,.5);
+	border-bottom: 1px dashed;
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: none;
 		border-bottom-color: transparent;
+	}
+}
+.link-decorated {
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
 	}
 }
 
@@ -1938,21 +1946,18 @@ label .styler {
 	}
 	button {
 		padding: 0;
-		height: 8px;
-		width: 48px;
-		line-height: 8px;
+		width: 16px;
+		height: 16px;
 		border: 0;
-		border-radius: 0;
-		background: $gray;
 		font-size: 0;
-		-ms-transition: all .3s;
+		border-radius: 8px;
+		background: #535353;
 		transition: all .3s;
 		cursor: pointer;
 
 		&:hover {
 			background: $primary;
-			// border-color: #FFF;
-		} 
+		}
 	}
 }
 

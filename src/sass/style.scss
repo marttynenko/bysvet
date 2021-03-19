@@ -203,6 +203,10 @@ body {
 	overflow: hidden;
 	min-height: 100%;
 	min-width: 100%;
+
+	&.no-overflow {
+		overflow: visible;
+	}
 }
 #middle {
 	-webkit-flex: 1 0 auto;
@@ -398,4 +402,4 @@ body {
 
 // @import "demo";
 
-// @import "responsive";
+@import "responsive";

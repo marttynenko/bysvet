@@ -38,8 +38,8 @@ footer.footer {
     &-icon {
       position: absolute;
       left: 0px;
-      top: 0px;
-      width: 25px;
+      top: -1px;
+      width: 24px;
       height: 24px;
     }
   }
@@ -113,6 +113,149 @@ footer.footer {
       height: 37px;
       background: url(../images/svg/farba.svg) center no-repeat;
       background-size: contain;
+    }
+  }
+}
+
+@media (max-width: 1420px) {
+  .f-contacts {
+    @include fz(16);
+
+    &-item {
+      padding-left: 28px;
+
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .f-contacts {
+    &-group {
+      &:nth-of-type(1) {
+        grid-area: one;
+      }
+      &:nth-of-type(2) {
+        grid-area: two;
+      }
+      &:nth-of-type(3) {
+        grid-area: three;
+      }
+      &:nth-of-type(4) {
+        grid-area: four;
+      }
+      &:nth-of-type(5) {
+        grid-area: five;
+      }
+    }
+    &-item {
+      display: block;
+    }
+  }
+}//1240px
+
+
+@media (max-width: 1240px) and (min-width: 576px) {
+  .f-contacts {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: minmax(33px, auto) auto minmax(33px, auto);
+    grid-template-areas: 
+      "one three four"
+      "two three five";
+
+    &-group {
+      &:nth-of-type(3) {
+        .f-contacts-item {
+          min-height: 33px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .col-f-copy {
+    order: 1;
+  }
+  .f-copy, .f-complaints {
+    max-width: 100%;
+  }
+  .f-copy {
+    padding-top: 25px;
+    border-top: 1px solid #E6E7EA;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .f-complaints-icon {
+    top: -10px;
+  }
+  .f-complaints p {
+    margin-bottom: 8px;
+  }
+  .f-menu {
+    margin-bottom: 30px;
+  }
+  .f-menu-title {
+    margin-bottom: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .f-bottom-flex {
+    display: block;
+    text-align: center;
+  }
+  .f-paysys {
+    margin-bottom: 30px;
+
+    &-item {
+      margin-right: 2vw;
+      max-width: 25%;
+
+      img {
+        max-height: 13vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .f-contacts {
+    display: grid;
+    grid-template-areas: 
+      "one three"
+      "two three"
+      "four three"
+      "five three";
+
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .f-dev,
+  .f-copy {
+    @include fz(14);
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-top {
+    padding-bottom: 22px;
+  }
+  .f-contacts {
+    @include fz(14);
+
+    &-item {
+      margin-bottom: 10px;
     }
   }
 }

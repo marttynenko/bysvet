@@ -1,0 +1,237 @@
+<!--#include file="inc-header.html"-->
+
+<h1 class="page-title">Оформление заказа</h1>
+
+<div class="ordering">
+  <form id="ordering_form">
+  <div class="row">
+    <div class="col-lg-9 col-md-8">
+      
+      <div class="ordering-group">
+        <div class="h4 ordering-group-title">Общая информация</div>
+        <div class="ordering-auth-hint">Если вы уже зарегистрированы, пожалуйста, <a href="javascript:void(0)" data-href="ajax/popup-auth.html" class="ajax-mfp link-decorated">авторизуйтесь</a></div>
+
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Контактное лицо</div>
+              <input type="text" class="ui-input" name="contact" value="Иван" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Номер телефона</div>
+              <input type="tel" class="ui-input mask-phone" name="phone" value="+375 44 703-98-17" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Ваш email</div>
+              <input type="email" class="ui-input" name="email" value="mail@mail.ru" required>
+            </div>
+          </div>
+        </div>
+
+        <hr class="ui-hr">
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Название организации</div>
+              <input type="text" class="ui-input" name="organization" value="ТЧУП Торговый дом &quot;БелТИЗ&quot;" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">ФИО руководителя</div>
+              <input type="text" class="ui-input" name="director" value="Иванов Иван Иванович" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">На основании чего действует</div>
+              <input type="text" class="ui-input" name="document" value="Устав" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Юр. адрес</div>
+              <input type="text" class="ui-input" name="orgadres" value="г. Минск, ул. Амураторская, 7, оф. 5" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">УНП</div>
+              <input type="text" class="ui-input" name="unp" value="23423312425124123" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Пункт разгрузки</div>
+              <input type="text" class="ui-input" name="cargo" value="г. Минск, ул. Амураторская, 7, оф. 5" required>
+            </div>
+          </div>
+        </div><!--.row-->
+
+        <hr class="ui-hr">
+
+        <div class="row">
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Наименование банка</div>
+              <input type="text" class="ui-input" name="bankname" value="ОАО &quot;Альфа Банк&quot;" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">Адрес банка</div>
+              <input type="text" class="ui-input" name="bankadres" value="г. Минск, ул. Крапоткина 29В" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">BIC</div>
+              <input type="text" class="ui-input" name="bancbic" value="FDFSD2232" required>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-us-6">
+            <div class="ui-field">
+              <div class="ui-label">IBAN</div>
+              <input type="text" class="ui-input" name="bankiban" value="32467841234325" required>
+            </div>
+          </div>
+        </div><!--.row-->
+          
+      </div><!--.group-->
+
+      <div class="ordering-group">
+        <div class="ordering-group-title">Информация о доставке</div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="ui-field">
+              <div class="ui-label">Адрес доставки</div>
+              <textarea name="deliveryadr" rows="2" class="ui-input"></textarea>
+            </div>
+
+            <div class="ordering-variants">
+              <div class="ui-label">Способы доставки</div>
+              <label for="delivery_1" class="ordering-variant">
+                <input type="radio" name="delivery" id="delivery_1" class="not-styler">
+                <div class="ordering-variant-body">
+                  <div class="ordering-variant-icon"><img src="images/logo-mini.png" alt="alt" loading="lazy"></div>
+                  <div class="ordering-variant-title">Самовывоз из нашего офиса</div>
+                  <div class="ordering-variant-info">Арес точки выдачи, стоимость, и/или любая другая информация</div>
+                </div>
+              </label>
+
+              <label for="delivery_2" class="ordering-variant">
+                <input type="radio" name="delivery" id="delivery_2" class="not-styler">
+                <div class="ordering-variant-body">
+                  <div class="ordering-variant-icon"><img src="images/belpost.png" alt="alt" loading="lazy"></div>
+                  <div class="ordering-variant-title">Белпочта</div>
+                  <div class="ordering-variant-info">Арес точки выдачи, стоимость, и/или любая другая информация</div>
+                </div>
+              </label>
+            </div>
+
+
+          </div><!--.col-->
+        </div><!--.row-->
+        
+      </div><!--.group-->
+
+      <div class="ordering-group">
+        <div class="ordering-group-title">Способы оплаты</div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="ordering-variants">
+              <label for="payment_1" class="ordering-variant">
+                <input type="radio" name="payment" id="payment_1" class="not-styler">
+                <div class="ordering-variant-body">
+                  <div class="ordering-variant-icon ordering-variant-icon-flex"><img src="images/payments/1.svg" alt="alt" loading="lazy"></div>
+                  <div class="ordering-variant-title">Наличный расчет</div>
+                  <div class="ordering-variant-info">Любая полезная информация касательно способа</div>
+                </div>
+              </label>
+
+              <label for="payment_2" class="ordering-variant">
+                <input type="radio" name="payment" id="payment_2" class="not-styler">
+                <div class="ordering-variant-body">
+                  <div class="ordering-variant-icon ordering-variant-icon-flex"><img src="images/payments/2.svg" alt="alt" loading="lazy"></div>
+                  <div class="ordering-variant-title">Безналичный расчет</div>
+                  <div class="ordering-variant-info">Любая полезная информация касательно способа</div>
+                </div>
+              </label>
+
+              <label for="payment_3" class="ordering-variant">
+                <input type="radio" name="payment" id="payment_3" class="not-styler">
+                <div class="ordering-variant-body">
+                  <div class="ordering-variant-icon ordering-variant-icon-flex"><img src="images/payments/3.svg" alt="alt" loading="lazy"></div>
+                  <div class="ordering-variant-title">Оплата банковским переводом</div>
+                  <div class="ordering-variant-info">Любая полезная информация касательно способа</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="ui-field">
+              <label for="comment" class="ui-label">Комментарий к заказу</label>
+              <textarea name="comment" rows="4" class="ui-input"></textarea>
+            </div>
+          </div><!--.col-md-8-->
+        </div><!--.row-->
+        
+      </div><!--.group-->
+    </div><!--.col-->
+    <div class="col-lg-3 col-md-4">
+      <div class="cart-check">
+        <div class="cart-check-string flex align-justify">
+          <div class="cart-check-label">Стоимость доставки:</div>
+          <div class="cart-check-value">0 BYN</div>
+        </div>
+        <hr class="ui-hr">
+        <div class="cart-check-string flex align-justify">
+          <div class="cart-check-label">Итого:</div>
+          <div class="cart-check-value cart-check-value-total">1140.35 BYN</div>
+        </div>
+  
+        <button type="submit" class="btn btn-block cart-check-btn">Оформить заказ</button>
+      </div>
+    </div>
+  </div><!--.row-->
+</form>
+</div><!--.ordering-->
+
+<script>
+  document.addEventListener("DOMContentLoaded",function(){
+    $('#ordering_form').validate({
+      rules: {
+        email: {
+          email: true
+        },
+        phone: {
+          telephone: true
+        },
+        delivery: {
+          required: true
+        },
+        payment: {
+          required: true
+        }
+      }
+    })
+  });
+</script>
+<!--#include file="inc-footer.html"-->

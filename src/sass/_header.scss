@@ -64,6 +64,8 @@ header.header {
 }
 
 .h-btns {
+	white-space: nowrap;
+
 	.btn-bordered {
 		margin-left: 20px;
 		border: 1px solid rgba(#FFF,.95);
@@ -125,8 +127,10 @@ header.header {
 		@include fz(11);
 	}
 }
-.h-catalog {
-	position: relative;
+.header-bottom {
+	& > .inner > .flex {
+		position: relative;
+	}
 }
 .catalog-toggler {
 	position: relative;
@@ -144,7 +148,7 @@ header.header {
 			position: absolute;
 			height: 2px;
 			background: #FFF;
-			transition: transform .3s;
+			transition: transform .1s;
 			top: 50%;
 			margin-top: -1px;
 			width: 100%;
@@ -181,7 +185,39 @@ header.header {
 		z-index: -1;
 		filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.35));
 	}
+	&.opened {
+		.mm-2 {
+			opacity: 0;
+		}
+		.mm-1 {
+			transform: rotate(45deg);
+		}
+		.mm-3 {
+			transform: rotate(-45deg);
+		}
+	}
 }
+.catalog-menu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	z-index: 198;
+	background: #FFF;
+	padding: 50px 70px 10px;
+	box-shadow: 4px 4px 30px rgba(124, 124, 124, 0.15);
+	visibility: hidden;
+	opacity: 0;
+	transform: translate3d(0, 15px, 0);
+	transition: visibility .1s, opacity .1s, transform .1s;
+
+	&.opened {
+		visibility: visible;
+		opacity: 1;
+		transform: translate3d(0, 0px, 0);
+	}
+}
+
 .svg-h-cart {
 	fill: $secondary;
 }
@@ -205,30 +241,331 @@ header.header {
 		background: url(../images/svg/glass.svg) center no-repeat;
 		background-size: contain;
 	}
+}
+input.header-search-input {
+	width: 100%;
+	padding-left: 55px;
+	padding-right: 170px;
+	font-family: $basefont;
+	background: $input_bg;
+	color: $font;
+	border: 1px solid $input_border;
+	height: $input_height;
+	max-width: 100%;
+	@include fz($fontsize);
+	@if $input_border_radius > 0 {
+		-webkit-border-radius: $input_border_radius;
+		border-radius: $input_border_radius;
+	}
+	outline: none !important;
+	transition: border .3s, box-shadow .4s;
 
-	input#{&}-input {
+	&:focus {
+		border-color: $primary;
+	}
+}
+button.header-search-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 150px;
+	border-radius: 0px 4px 4px 0px;
+}
+
+.h-search {
+	position: relative;
+}
+.h-search-ac {
+	position: absolute;
+	left: 0;
+	right: 150px;
+	top: 100%;
+	background: #FFF;
+	z-index: 199;
+	padding: 40px 55px 30px;
+	box-shadow: 0px 4px 30px rgba(124, 124, 124, 0.15);
+	visibility: hidden;
+	opacity: 0;
+	transform: translate3d(0, 15px, 0);
+	transition: visibility .1s, opacity .1s, transform .1s;
+
+	&.opened {
+		visibility: visible;
+		opacity: 1;
+		transform: translate3d(0, 0px, 0);
+	}
+}
+.h-search-cats {
+	padding-bottom: 30px;
+	border-bottom: 1px solid $border;
+}
+.h-search-goods {
+	margin-bottom: 25px;
+}
+.h-search-card {
+	padding: 20px 0;
+	border-bottom: 1px solid $border;
+
+	&-img {
+		-ms-flex: 0 0 50px;
+		flex: 0 0 50px;
+		max-width: 50px;
+		margin-right: 15px;
+	}
+	&-mid {
 		width: 100%;
-		padding-left: 55px;
-		padding-right: 170px;
-		font-family: $basefont;
-		background: $input_bg;
-		color: $font;
-		border: 1px solid $input_border;
-		height: $input_height;
-		max-width: 100%;
-		@include fz($fontsize);
-		@if $input_border_radius > 0 {
-			-webkit-border-radius: $input_border_radius;
-			border-radius: $input_border_radius;
+		padding-right: 15px;
+	}
+	&-title {
+
+		a {
+			color: $font;
+			font-weight: 200;
+
+			&:hover {
+				color: $secondary;
+			}
 		}
-		outline: none !important;
-		transition: border .3s, box-shadow .4s;
 	}
-	button#{&}-btn {
-		position: absolute;
+	&-code {
+		@include fz(9);
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-right: 8px;
+	}
+	&-availability {
+		font-weight: 700;
+		@include fz(9);
+		text-transform: uppercase;
+		margin-right: 8px;
+	}
+	&-sticker {
+		color: #FFF;
+		font-weight: 700;
+		@include fz(9);
+		display: inline-block;
+		height: 18px;
+		line-height: 18px;
+		background: #BD0001;
+		padding: 0px 6px;
+		margin-right: 8px;
+	}
+	&-prices {
+		white-space: nowrap;
+	}
+	&-old-price {
+		font-weight: 300;
+		@include fz(11);
+		text-decoration: line-through;
+		padding-top: 6px;
+	}
+	&-price {
+		font-weight: 700;
+		@include fz(18);
+		color: #8F1213;
+	}
+}
+
+
+@media (max-width: 1420px) {
+	.h-btns {
+		.btn {
+			border: 0;
+			padding: 0;
+			box-shadow: none;
+			font-size: 0;
+		}
+	}
+}
+
+
+@media (max-width: 1140px) {
+	.header-top {
+		padding: 10px 0;
+	}
+	.header-bottom {
+		padding: 12px 0;
+	}
+	.h-links {
+		display: none;
+		visibility: hidden;
+	}
+	.h-contacts {
+		width: 100%;
+		text-align: right;
+	}
+}
+
+@media (max-width: 992px) {
+
+	.h-search-ac {
 		right: 0;
-		top: 0;
-		width: 150px;
-		border-radius: 0px 4px 4px 0px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
+	.header-search {
+		&:before {
+			content: none;
+		}
+		input#{&}-input {
+			padding-left: 20px;
+			padding-right: 60px;
+		}
+		button#{&}-btn {
+			width: 50px;
+			padding: 0;
+			font-size: 0;
+			text-indent: -9999px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				right: 12px;
+				top: 12px;
+				width: 15px;
+				height: 15px;
+				border: 1px solid #FFF;
+				border-radius: 50%;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				right: 27px;
+				top: 27px;
+				width: 1px;
+				height: 10px;
+				background: #FFF;
+				transform: rotate(31deg);
+			}
+		}
+	}
+
+}//992
+
+@media (max-width: 768px) {
+	.h-logo {
+		flex: 0 0 160px;
+		max-width: 160px;
+	}
+	.h-phone {
+		@include fz(16);
+	}
+	.h-contacts {
+		padding-right: 5px;
+		&-icon {
+			display: none;
+		}
+	}
+	.h-btns .btn-bordered {
+		margin-left: 10px;
+	}
+	.h-catalog {
+		flex: 0 0 50px;
+		max-width: 50px;
+	}
+	.catalog-toggler {
+		font-size: 0;
+		width: 100%;
+		padding: 0;
+
+		&-lines {
+			left: 50%;
+			margin-left: -11px;
+		}
+
+		&-arrow {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	.h-search-ac {
+		left: -70px;
+	}
+}
+
+@media (max-width: 450px) {
+
+	.h-logo {
+		flex: 0 0 130px;
+		max-width: 130px;
+	}
+	.h-btns {
+		.btn {
+			height: 24px;
+			line-height: 24px;
+			i {
+				margin-right: 0;
+			}
+		}
+	}
+	.btn-icon-user .btn-triangle {
+		display: none;
+		visibility: hidden;
+	}
+	.h-contacts {
+		padding-right: 0;
+	}
+	.h-phone {
+		display: inline-block;
+		position: relative;
+		font-size: 0;
+		width: 24px;
+		height: 24px;
+		background: $primary;
+		border-radius: 50%;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 1px;
+			margin: auto;
+			width: 15px;
+			height: 15px;
+			background: url(../images/svg/c-phone.svg) center no-repeat;
+			background-size: contain;
+		}
+	}
+	.header-bottom {
+		padding: 10px 0;
+	}
+	.h-catalog {
+		flex: 0 0 40px;
+		max-width: 40px;
+	}
+	.catalog-toggler {
+		left: -10px;
+		background-color: transparent !important;
+		border-color: transparent !important;
+
+		&-lines {
+			left: 10px;
+			margin-left: 0;
+
+			& > div {
+				background: $secondary;
+			}
+		}
+	}
+	.h-search {
+		margin-left: 0;
+
+		&-cats {
+			padding-bottom: 10px;
+		}
+		.btn-with-counter {
+			padding: 0px 20px;
+			@include fz(14);
+			height: 40px;
+			line-height: 38px;
+		}
+	}
+	.h-search-ac {
+		left: -60px;
+		right: -15px;
+		padding-top: 20px;
+	}
+
 }
