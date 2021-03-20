@@ -26,8 +26,32 @@ RESPONSIVE STYLES ----------------------- */
 			}
 		}
 	}
+	.pr-card-body {
+		flex: 0 0 45%;
+		max-width: 45%;
+	}
+	.pr-card-store {
+		flex: 0 0 25%;
+		max-width: 25%;
+	}
+	.pr-card-btn {
+		padding: 0px 20px;
+	}
 
 }//1420
+
+
+@media (max-width: 1360px) {
+	.col-related-banner {
+		flex: 0 0 310px;
+		max-width: 310px;
+	}
+	.col-related-carousel {
+		flex: 0 0 calc(100% - 310px);
+		max-width: calc(100% - 310px);
+	}
+}//1360
+
 
 @media (max-width: 1240px) and (min-width: 992px) {
 	
@@ -79,7 +103,76 @@ RESPONSIVE STYLES ----------------------- */
 		@include fz(16);
 		padding: 0px 25px;
 	}
+	.pr-card {
+		&-cols {
+			flex-wrap: wrap;
+		}
+		&-imgs {
+			flex: 0 0 400px;
+			max-width: 400px;
+		}
+		&-store {
+			flex: 0 0 calc(100% - 400px);
+			max-width: calc(100% - 400px);
+		}
+		&-body {
+			flex: 0 0 100%;
+			max-width: 100%;
+			order: 1;
+		}
+		&-storeblock {
+			padding: 0;
+			box-shadow: none;
+		}
+	}
+	.col-related-banner {
+		display: none;
+		visibility: hidden;
+	}
+	.col-related-carousel {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.goods-block-head {
+		padding-right: 0;
+	}
+	.card {
+		.ui-amount:not(.ui-aomunt-mini) {
+			width: 90px;
+		}
+	}
+	.catalog-list[data-style="list"] .card-variants {
+		display: none;
+		visibility: hidden;
+	}
+	.news-item {
+		&-title {
+			@include fz(28);
+		}
+		&-date {
+			margin-bottom: 12px;
+		}
+	}
 }//1140
+
+@media (max-width: 1140px) and (min-width: 768px) {
+
+	.pr-card {
+		&-btn {
+			position: static;
+			padding: 0px 35px;
+			height: 60px;
+			line-height: 58px;
+			@include fz(18);
+			width: 180px;
+		}
+		&-amount {
+			position: absolute;
+			left: 200px;
+			top: 10px;
+		}
+	}
+}//1140-768
 
 
 @media (max-width: 992px) and (min-width: 768px) {
@@ -159,7 +252,52 @@ RESPONSIVE STYLES ----------------------- */
 			padding-right: 25px;
 		}
 	}
+	.catalog-settings {
+		padding: 15px 20px;
+	}
+	.catalog-per-page,
+	.catalog-style {
+		.catalog-settings-label {
+			display: none;
+		}
+	}
+	.catalog-per-page {
+		margin-right: 15px;
+	}
+	.col-sidebar {
+		.catalog-filters + .banenr,
+		.catalog-filters + .banner,
+		.catalog-filters + * {
+			display: none;
+		}
+	}
+	.catalog-filters {
+		margin-bottom: 0px;
+		padding: 15px 20px;
+	}
+	.filters {
+		&-body {
+			display: none;
+			padding-top: 15px;
+
+			&.opened {
+				display: block;
+			}
+		}
+		&-title {
+			cursor: pointer;
+			@include fz(24);
+			font-weight: 700;
+			margin-bottom: 0;
+			background: url(../images/svg/filter.svg) 20px center no-repeat;
+			background-size: 28px;
+			margin: -15px -20px;
+			padding: 15px 20px 15px 58px;
+		}
+	}
 	
+	
+
 }//992
 
 
@@ -248,6 +386,74 @@ RESPONSIVE STYLES ----------------------- */
 			margin-top: 0;
 		}
 	}
+	.pr-card {
+		&-cols {
+			flex-wrap: wrap;
+		}
+		&-imgs {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 30px;
+		}
+		&-store {
+			flex: 0 0 100%;
+			max-width: 100%;
+			margin-bottom: 40px;
+		}
+		&-descr {
+			padding-top: 20px;
+			margin-bottom: 25px;
+			padding-bottom: 5px;
+		}
+		&-stock {
+			padding-bottom: 10px;
+			margin-bottom: 0px;
+			border-bottom: 0;
+		}
+		&-price {
+			margin-bottom: 20px;
+		}
+		&-btns {
+			border-bottom: 0;
+			padding-bottom: 15px;
+			margin-bottom: 0;
+		}
+		&-btn {
+			position: static;
+			height: 50px;
+			line-height: 48px;
+			display: block;
+			width: 100%;
+			@include fz(17);
+		}
+		&-amount {
+			position: absolute;
+			top: 0px;
+			right: 0;
+		}
+		.ui-amount {
+			&-plus,
+			&-minus {
+				height: 50px;
+				line-height: 48px;
+			}
+			input.ui-amount-input {
+				height: 50px;
+			}
+		}
+	}
+	.slick-shadows .slick-slide:not(.slick-active) {
+    opacity: 1;
+	}
+	.card {
+		box-shadow: 0px 0px 8px rgba(124,124,124,0.15);
+	}
+	.catalog-per-page {
+		margin-right: 0;
+	}
+	.catalog-style {
+		display: none;
+	}
 }//768
 
 
@@ -297,7 +503,40 @@ RESPONSIVE STYLES ----------------------- */
 			margin-bottom: 15px;
 		}
 	}
+	.pr-card-header {
+		margin-bottom: 30px;
+	}
+	.breadcrumbs,
+	.top-banner + .breadcrumbs {
+		margin-bottom: 20px;
+	}
+	header.header,
+	.top-banner {
+		margin-bottom: 25px;
+	}
+	.catalog-settings-label {
+		display: none;
+	}
+	.news-item {
+		&-title {
+			@include fz(24);
+		}
+		&-body {
+			padding-left: 15px;
+		}
+	}
+	.node-panel {
+		padding: 15px;
+
+		.flex {
+			display: block;
+		}
+	}
+	.node-date {
+		margin-bottom: 8px;
+	}
 }//576
+
 
 @media (max-width: 480px) {
 	
@@ -365,6 +604,9 @@ RESPONSIVE STYLES ----------------------- */
 			margin-top: 0;
 		}
 	}
+	.card-title {
+		height: 60px;
+	}
 
 }//480
 
@@ -386,6 +628,21 @@ RESPONSIVE STYLES ----------------------- */
 		}
 		&-currency {
 			@include fz(8);
+		}
+	}
+	.news-item {
+		display: block;
+		margin-bottom: 40px;
+
+		&-img {
+			max-width: 100%;
+			margin-bottom: 15px;
+		}
+		&-body {
+			padding-left: 0px;
+		}
+		&-link {
+			display: none;
 		}
 	}
 

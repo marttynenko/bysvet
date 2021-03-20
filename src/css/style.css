@@ -1225,9 +1225,11 @@ CARD ---------------------- */
 
 .pr-card-question { text-align: center; }
 
-.pr-card-question a { position: relative; display: inline-block; margin-left: 22px; font-weight: 400; border-bottom: 1px dashed #BD0001; }
+.pr-card-question a { position: relative; display: inline-block; margin-left: 22px; font-weight: 400; }
 
-.pr-card-question a:hover { border-bottom-color: transparent; }
+.pr-card-question a span { border-bottom: 1px dashed #BD0001; }
+
+.pr-card-question a:hover span { border-bottom-color: transparent; }
 
 .pr-card-question a:before { content: "?"; position: absolute; left: -22px; top: 3px; width: 16px; height: 16px; text-align: center; line-height: 14px; border: 1px solid #000; border-radius: 50%; background: #FED32D; font-size: 11px; color: #000; }
 
@@ -1244,6 +1246,10 @@ CARD ---------------------- */
 .pr-card-availability.pending { color: #FED32D; }
 
 .pr-card-availability.pending:before { background: #FED32D; }
+
+.slick-card { text-align: center; }
+
+.slick-card img { display: block; margin: 0 auto; }
 
 .ui-variants { position: relative; }
 
@@ -1302,6 +1308,9 @@ CARD ---------------------- */
 .col-sidebar { width: 100%; margin-bottom: 30px; }
 
 .col-content { width: 100%; margin-bottom: 30px; }
+
+@media (min-width: 992px) { .col-sidebar { -ms-flex: 0 0 250px; flex: 0 0 250px; max-width: 250px; order: -1; }
+  .col-content { -ms-flex: 0 0 calc(100% - 250px); flex: 0 0 calc(100% - 250px); max-width: calc(100% - 250px); } }
 
 @media (min-width: 1220px) { .col-sidebar { -ms-flex: 0 0 21%; flex: 0 0 21%; max-width: 21%; order: -1; }
   .col-content { -ms-flex: 0 0 79%; flex: 0 0 79%; max-width: 79%; } }
@@ -1403,6 +1412,8 @@ CARD ---------------------- */
 .catalog-style-link:not(.active):hover svg { fill: #555; }
 
 .ui-range-input { -ms-flex: 0 0 calc(50% - 19px); flex: 0 0 calc(50% - 19px); max-width: calc(50% - 19px); }
+
+.ui-range-input input { width: 100%; }
 
 .ui-range-dash { -ms-flex: 0 0 38px; flex: 0 0 38px; max-width: 38px; position: relative; }
 
@@ -2120,7 +2131,13 @@ RESPONSIVE STYLES ----------------------- */
 .mobile-menu { display: none; visibility: hidden; }
 
 @media (max-width: 1420px) { .newsletters { padding-left: 35px; padding-right: 35px; }
-  .newsletters-promo-icon { flex: 0 0 120px; max-width: 120px; } }
+  .newsletters-promo-icon { flex: 0 0 120px; max-width: 120px; }
+  .pr-card-body { flex: 0 0 45%; max-width: 45%; }
+  .pr-card-store { flex: 0 0 25%; max-width: 25%; }
+  .pr-card-btn { padding: 0px 20px; } }
+
+@media (max-width: 1360px) { .col-related-banner { flex: 0 0 310px; max-width: 310px; }
+  .col-related-carousel { flex: 0 0 calc(100% - 310px); max-width: calc(100% - 310px); } }
 
 @media (max-width: 1240px) and (min-width: 992px) { .grid-mini .banner img { min-height: 31.65vw; } }
 
@@ -2131,7 +2148,22 @@ RESPONSIVE STYLES ----------------------- */
 @media (max-width: 1140px) { .slick-offers-tabs { padding-right: 0; text-align: center; }
   .slick-offers-filter { margin-right: 4px; margin-left: 4px; }
   .main-read { padding-left: 15px; padding-right: 15px; }
-  .btn-with-counter { height: 50px; line-height: 48px; font-size: 16px; font-size: 1rem; padding: 0px 25px; } }
+  .btn-with-counter { height: 50px; line-height: 48px; font-size: 16px; font-size: 1rem; padding: 0px 25px; }
+  .pr-card-cols { flex-wrap: wrap; }
+  .pr-card-imgs { flex: 0 0 400px; max-width: 400px; }
+  .pr-card-store { flex: 0 0 calc(100% - 400px); max-width: calc(100% - 400px); }
+  .pr-card-body { flex: 0 0 100%; max-width: 100%; order: 1; }
+  .pr-card-storeblock { padding: 0; box-shadow: none; }
+  .col-related-banner { display: none; visibility: hidden; }
+  .col-related-carousel { flex: 0 0 100%; max-width: 100%; }
+  .goods-block-head { padding-right: 0; }
+  .card .ui-amount:not(.ui-aomunt-mini) { width: 90px; }
+  .catalog-list[data-style="list"] .card-variants { display: none; visibility: hidden; }
+  .news-item-title { font-size: 28px; font-size: 1.75rem; }
+  .news-item-date { margin-bottom: 12px; } }
+
+@media (max-width: 1140px) and (min-width: 768px) { .pr-card-btn { position: static; padding: 0px 35px; height: 60px; line-height: 58px; font-size: 18px; font-size: 1.125rem; width: 180px; }
+  .pr-card-amount { position: absolute; left: 200px; top: 10px; } }
 
 @media (max-width: 992px) and (min-width: 768px) { .main-advantages .col-us-6.col-sm-3 { flex: 0 0 50%; max-width: 50%; } }
 
@@ -2150,7 +2182,15 @@ RESPONSIVE STYLES ----------------------- */
   .grid-mini { flex: 0 0 50%; max-width: 50%; }
   .slick-top { margin-bottom: 20px; }
   .cart-item-descr { padding-right: 10px; }
-  .cart-item-peritem, .cart-item-amount { padding-right: 25px; } }
+  .cart-item-peritem, .cart-item-amount { padding-right: 25px; }
+  .catalog-settings { padding: 15px 20px; }
+  .catalog-per-page .catalog-settings-label, .catalog-style .catalog-settings-label { display: none; }
+  .catalog-per-page { margin-right: 15px; }
+  .col-sidebar .catalog-filters + .banenr, .col-sidebar .catalog-filters + .banner, .col-sidebar .catalog-filters + * { display: none; }
+  .catalog-filters { margin-bottom: 0px; padding: 15px 20px; }
+  .filters-body { display: none; padding-top: 15px; }
+  .filters-body.opened { display: block; }
+  .filters-title { cursor: pointer; font-size: 24px; font-size: 1.5rem; font-weight: 700; margin-bottom: 0; background: url(../images/svg/filter.svg) 20px center no-repeat; background-size: 28px; margin: -15px -20px; padding: 15px 20px 15px 58px; } }
 
 @media (max-width: 768px) { h1, .h1 { font-size: 36px; font-size: 2.25rem; }
   h2, .h2 { font-size: 30px; font-size: 1.875rem; }
@@ -2169,7 +2209,22 @@ RESPONSIVE STYLES ----------------------- */
   .cart-item-peritem { margin-left: 65px; }
   .cart-item-peritem, .cart-item-sum { align-self: center; text-align: left; }
   .cart-item-peritem, .cart-item-amount { padding-right: 20px; min-width: 105px; }
-  .cart-item-remove { right: 10px; top: 10px; margin-top: 0; } }
+  .cart-item-remove { right: 10px; top: 10px; margin-top: 0; }
+  .pr-card-cols { flex-wrap: wrap; }
+  .pr-card-imgs { flex: 0 0 100%; max-width: 100%; margin-bottom: 30px; }
+  .pr-card-store { flex: 0 0 100%; max-width: 100%; margin-bottom: 40px; }
+  .pr-card-descr { padding-top: 20px; margin-bottom: 25px; padding-bottom: 5px; }
+  .pr-card-stock { padding-bottom: 10px; margin-bottom: 0px; border-bottom: 0; }
+  .pr-card-price { margin-bottom: 20px; }
+  .pr-card-btns { border-bottom: 0; padding-bottom: 15px; margin-bottom: 0; }
+  .pr-card-btn { position: static; height: 50px; line-height: 48px; display: block; width: 100%; font-size: 17px; font-size: 1.0625rem; }
+  .pr-card-amount { position: absolute; top: 0px; right: 0; }
+  .pr-card .ui-amount-plus, .pr-card .ui-amount-minus { height: 50px; line-height: 48px; }
+  .pr-card .ui-amount input.ui-amount-input { height: 50px; }
+  .slick-shadows .slick-slide:not(.slick-active) { opacity: 1; }
+  .card { box-shadow: 0px 0px 8px rgba(124, 124, 124, 0.15); }
+  .catalog-per-page { margin-right: 0; }
+  .catalog-style { display: none; } }
 
 @media (max-width: 576px) { .newsletters { margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px; }
   .main-cat { position: relative; padding: 20px 10px 20px 15px; }
@@ -2180,7 +2235,16 @@ RESPONSIVE STYLES ----------------------- */
   .slick-partner { padding: 0px 8px; }
   .main-article { font-size: 14px; font-size: 0.875rem; }
   .main-article-title { font-size: 18px; font-size: 1.125rem; }
-  .main-article-txt { margin-bottom: 15px; } }
+  .main-article-txt { margin-bottom: 15px; }
+  .pr-card-header { margin-bottom: 30px; }
+  .breadcrumbs, .top-banner + .breadcrumbs { margin-bottom: 20px; }
+  header.header, .top-banner { margin-bottom: 25px; }
+  .catalog-settings-label { display: none; }
+  .news-item-title { font-size: 24px; font-size: 1.5rem; }
+  .news-item-body { padding-left: 15px; }
+  .node-panel { padding: 15px; }
+  .node-panel .flex { display: block; }
+  .node-date { margin-bottom: 8px; } }
 
 @media (max-width: 480px) { html { font-size: 15px; }
   h1, .h1 { font-size: 30px; font-size: 1.875rem; }
@@ -2197,12 +2261,17 @@ RESPONSIVE STYLES ----------------------- */
   .cart-item-peritem, .cart-item-sum, .cart-item-amount { flex: 0 0 33.33%; max-width: 33.33%; min-width: 0; }
   .cart-item-peritem, .cart-item-amount { padding-right: 0px; }
   .cart-item-amount { text-align: center; }
-  .cart-item-remove { right: 10px; top: 10px; margin-top: 0; } }
+  .cart-item-remove { right: 10px; top: 10px; margin-top: 0; }
+  .card-title { height: 60px; } }
 
 @media (max-width: 400px) { .main-news { margin-top: 0; }
   .main-article { margin-bottom: 30px; }
   .cart-item .ui-amount { width: 90px; }
   .cart-item-peritem, .cart-item-sum { font-size: 16px; font-size: 1rem; }
-  .cart-item-currency { font-size: 8px; font-size: 0.5rem; } }
+  .cart-item-currency { font-size: 8px; font-size: 0.5rem; }
+  .news-item { display: block; margin-bottom: 40px; }
+  .news-item-img { max-width: 100%; margin-bottom: 15px; }
+  .news-item-body { padding-left: 0px; }
+  .news-item-link { display: none; } }
 
 @media (max-width: 350px) { .catalog-tree-parent { font-size: 18px; font-size: 1.125rem; } }

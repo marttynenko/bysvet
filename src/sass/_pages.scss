@@ -979,10 +979,16 @@ CARD ---------------------- */
 			display: inline-block;
 			margin-left: 22px;
 			font-weight: 400;
-			border-bottom: 1px dashed $secondary;
+			
+
+			span {
+				border-bottom: 1px dashed $secondary;
+			}
 
 			&:hover {
-				border-bottom-color: transparent;
+				span {
+					border-bottom-color: transparent;
+				}
 			}
 
 			&:before {
@@ -1035,6 +1041,14 @@ CARD ---------------------- */
 				background: $primary;
 			}
 		}
+	}
+}
+.slick-card {
+	text-align: center;
+
+	img {
+		display: block;
+		margin: 0 auto;
 	}
 }
 
@@ -1206,6 +1220,19 @@ CARD ---------------------- */
 .col-content {
 	width: 100%;
 	margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+	.col-sidebar {
+		-ms-flex: 0 0 250px;
+		flex: 0 0 250px;
+		max-width: 250px;
+		order: -1;
+	}
+	.col-content {
+		-ms-flex: 0 0 calc(100% - 250px);
+		flex: 0 0 calc(100% - 250px);
+		max-width: calc(100% - 250px);
+	}
 }
 @media (min-width: 1220px) {
 	.col-sidebar {
@@ -1508,6 +1535,10 @@ CARD ---------------------- */
 		-ms-flex: 0 0 calc(50% - 19px);
 		flex: 0 0 calc(50% - 19px);
 		max-width: calc(50% - 19px);
+
+		input {
+			width: 100%;
+		}
 	}
 	&-dash {
 		-ms-flex: 0 0 38px;

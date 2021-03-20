@@ -193,7 +193,7 @@ jQuery(document).ready(function($){
 					dots: true
 				}
 			}, {
-				breakpoint: 450,
+				breakpoint: 500,
 				settings: {
 					slidesToShow: 1,
 					arrows: false,
@@ -278,7 +278,47 @@ jQuery(document).ready(function($){
 	$('.slick-related').slick({
 		slidesToShow: 4,
 		infinite: false,
-		appendArrows: $('.slick-related-arrows')
+		appendArrows: $('.slick-related-arrows'),
+		responsive: [
+			{
+				breakpoint: 1360,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 1140,
+				settings: {
+					slidesToShow: 4,
+					arrows: false,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+					arrows: false,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					arrows: false,
+					dots: true
+				}
+			},
+			{
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 1,
+					arrows: false,
+					dots: true
+				}
+			}
+		]
 	})
 
 	
@@ -288,7 +328,43 @@ jQuery(document).ready(function($){
 		$(`#goods_slick_${key}`).slick({
 			infinite: false,
 			slidesToShow: 6,
-			appendArrows: $(`#goods_arrows_${key}`)
+			appendArrows: $(`#goods_arrows_${key}`),
+			responsive: [
+				{
+					breakpoint: 1360,
+					settings: {
+						slidesToShow: 5
+					}
+				},{
+					breakpoint: 1140,
+					settings: {
+						slidesToShow: 4,
+						arrows: false,
+						dots: true
+					}
+				},{
+					breakpoint: 992,
+					settings: {
+						slidesToShow: 3,
+						arrows: false,
+						dots: true
+					}
+				},{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						arrows: false,
+						dots: true
+					}
+				},{
+					breakpoint: 450,
+					settings: {
+						slidesToShow: 1,
+						arrows: false,
+						dots: true
+					}
+				}
+			]
 		})
 	});
 
@@ -415,6 +491,12 @@ jQuery(document).ready(function($){
 			$(this).text(this.isCollapsed)
 			this.isCollapsed = undefined
 		}
+	})
+
+
+	$(document).on('click','.filters-title',function(e){
+		e.preventDefault();
+		$('.filters-body').toggleClass('opened');
 	})
 
 	
