@@ -82,10 +82,6 @@ img { max-width: 100%; height: auto; }
 
 hr { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin: 0; margin-top: 20px; margin-bottom: 20px; padding: 0; height: 1px; border: 0; border-top: 1px solid #eee; overflow: hidden; }
 
-.img a { border-bottom: 0; }
-
-.title a { border-bottom: 0; }
-
 .title-throught { position: relative; text-align: center; }
 
 .title-throught:after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: #eee; }
@@ -98,7 +94,7 @@ main table { width: 100%; }
 
 main table td, main table th { padding: 8px 12px; border: 1px solid #eee; vertical-align: middle; }
 
-a img { border: none; display: block; line-height: 0; }
+.wrapper a img { border: none; display: block; line-height: 0; font-size: 0; }
 
 svg.sprite { display: block; max-width: 100%; max-height: 100%; -webkit-transition: fill .4s ease, stroke .4s ease; -moz-transition: fill .4s ease, stroke .4s ease; -ms-transition: fill .4s ease, stroke .4s ease; -o-transition: fill .4s ease, stroke .4s ease; transition: fill .4s ease, stroke .4s ease; }
 
@@ -908,10 +904,13 @@ footer.footer a:hover { color: #BD0001; }
 @media (max-width: 768px) { .f-bottom-flex { display: block; text-align: center; }
   .f-paysys { margin-bottom: 30px; }
   .f-paysys-item { margin-right: 2vw; max-width: 25%; }
-  .f-paysys-item img { max-height: 13vw; } }
+  .f-paysys-item img { max-height: 13vw; }
+  .f-complaints { margin-bottom: 0; } }
 
 @media (max-width: 576px) { .f-contacts { display: grid; grid-template-areas: "one three" "two three" "four three" "five three"; }
   .f-contacts-item { margin-bottom: 10px; } }
+
+@media (max-width: 480px) { .f-contacts-item-icon { top: -2px; } }
 
 @media (max-width: 420px) { .f-dev, .f-copy { font-size: 14px; font-size: 0.875rem; } }
 
@@ -925,7 +924,9 @@ footer.footer a:hover { color: #BD0001; }
 
 .news-item:hover .img img, .news-item:hover [class$="-img"] img { transform: scale(1.1); }
 
-.main-grid .row { margin-left: -10px; margin-right: -10px; }
+.main-grid, .mian-grid { line-height: 0; }
+
+.main-grid .row, .mian-grid .row { margin-left: -10px; margin-right: -10px; }
 
 .slick-top .slick-dots { position: absolute; bottom: 25px; left: 0; right: 0; }
 
@@ -937,9 +938,15 @@ footer.footer a:hover { color: #BD0001; }
 
 .grid-mini { flex: 0 0 20.834%; max-width: 20.834%; padding-left: 10px; padding-right: 10px; }
 
-.grid-mini-banner { display: block; line-height: 0; }
+.grid-mini-banner { display: block; line-height: 0; background: #F1F3F6; }
+
+.grid-mini-banner img { margin: 0 auto; }
 
 .grid-mini-banner:not(:last-child) { margin-bottom: 20px; }
+
+.grid-mini .banner { position: relative; height: 100%; overflow: hidden; }
+
+.grid-mini .banner img { position: absolute; object-fit: cover; object-position: center; min-height: 100%; min-width: 100%; }
 
 .grid-card { display: block; position: relative; height: 220px; background: #F1F3F6; padding: 20px 25px 10px; overflow: hidden; color: #000; font-weight: 400; }
 
@@ -1251,6 +1258,8 @@ CARD ---------------------- */
 
 .slick-card img { display: block; margin: 0 auto; }
 
+.slick-card .slick-dots button { width: 48px; height: 8px; background: #F1F3F6; border-radius: 0; }
+
 .ui-variants { position: relative; }
 
 .ui-variants-toggler { position: relative; border: 1px solid #eee; border-radius: 4px; padding: 15px 50px 15px 15px; font-weight: 400; cursor: pointer; }
@@ -1283,9 +1292,9 @@ CARD ---------------------- */
 
 .related-block { margin-bottom: 80px; }
 
-.col-related-banner { -ms-flex: 0 0 20%; flex: 0 0 20%; max-width: 20%; padding-top: 20px; padding-bottom: 20px; }
+.col-related-banner { -ms-flex: 0 0 20.49%; flex: 0 0 20.49%; max-width: 20.49%; padding-top: 20px; padding-bottom: 20px; }
 
-.col-related-carousel { -ms-flex: 0 0 80%; flex: 0 0 80%; max-width: 80%; }
+.col-related-carousel { -ms-flex: 0 0 79.51%; flex: 0 0 79.51%; max-width: 79.51%; }
 
 .goods-block { margin-bottom: 80px; }
 
@@ -1375,7 +1384,7 @@ CARD ---------------------- */
 
 .ui-filterradio span:before { content: ""; position: absolute; left: 0; top: -1px; width: 24px; height: 24px; background: #FFF; border: 1px solid #eee; border-radius: 12px; box-sizing: border-box; }
 
-.ui-filterradio span:after { content: ""; position: absolute; left: 1px; top: 0px; width: 22px; height: 22px; border-radius: 11px; opacity: 0; transform: scale(0.75); transition: opacity .1s, transform .1s; background: #000; box-shadow: inset 0px 0px 0px 5px #FFF; box-sizing: border-box; }
+.ui-filterradio span:after { content: ""; position: absolute; left: 6px; top: 5px; width: 12px; height: 12px; border-radius: 6px; opacity: 0; transform: scale(0.75); transition: opacity .1s, transform .1s; background: #000; box-sizing: border-box; }
 
 .ui-filterradio input:checked + span:before { border-color: #FED32D; }
 
@@ -2134,12 +2143,14 @@ RESPONSIVE STYLES ----------------------- */
   .newsletters-promo-icon { flex: 0 0 120px; max-width: 120px; }
   .pr-card-body { flex: 0 0 45%; max-width: 45%; }
   .pr-card-store { flex: 0 0 25%; max-width: 25%; }
-  .pr-card-btn { padding: 0px 20px; } }
+  .pr-card-btn { padding: 0px 20px; }
+  .responsive-table { overflow-x: auto; max-width: 100%; margin-bottom: 30px; }
+  .responsive-table table { margin-bottom: 0; }
+  table.orders td, table.orders th, table.order td, table.order th { min-width: 100px; }
+  table.orders td.orders-goods, table.orders th.orders-goods { min-width: 220px; } }
 
 @media (max-width: 1360px) { .col-related-banner { flex: 0 0 310px; max-width: 310px; }
   .col-related-carousel { flex: 0 0 calc(100% - 310px); max-width: calc(100% - 310px); } }
-
-@media (max-width: 1240px) and (min-width: 992px) { .grid-mini .banner img { min-height: 31.65vw; } }
 
 @media (max-width: 1240px) { .mini-news-img { -ms-flex: 0 0 115px; flex: 0 0 115px; max-width: 115px; }
   .mini-news-date { margin-bottom: 3px; }
@@ -2164,6 +2175,10 @@ RESPONSIVE STYLES ----------------------- */
 
 @media (max-width: 1140px) and (min-width: 768px) { .pr-card-btn { position: static; padding: 0px 35px; height: 60px; line-height: 58px; font-size: 18px; font-size: 1.125rem; width: 180px; }
   .pr-card-amount { position: absolute; left: 200px; top: 10px; } }
+
+@media (max-width: 1080px) { .card-btn { padding: 0; width: 46px; font-size: 0; background-image: url(../images/svg/cart.svg); background-position: center; background-repeat: no-repeat; background-size: 20px; } }
+
+@media (max-width: 1080px) and (min-width: 768px) { .catalog-list[data-style="list"] .card-btn { background-image: none; } }
 
 @media (max-width: 992px) and (min-width: 768px) { .main-advantages .col-us-6.col-sm-3 { flex: 0 0 50%; max-width: 50%; } }
 
@@ -2190,7 +2205,8 @@ RESPONSIVE STYLES ----------------------- */
   .catalog-filters { margin-bottom: 0px; padding: 15px 20px; }
   .filters-body { display: none; padding-top: 15px; }
   .filters-body.opened { display: block; }
-  .filters-title { cursor: pointer; font-size: 24px; font-size: 1.5rem; font-weight: 700; margin-bottom: 0; background: url(../images/svg/filter.svg) 20px center no-repeat; background-size: 28px; margin: -15px -20px; padding: 15px 20px 15px 58px; } }
+  .filters-title { cursor: pointer; font-size: 24px; font-size: 1.5rem; font-weight: 700; margin-bottom: 0; background: url(../images/svg/filter.svg) 20px center no-repeat; background-size: 28px; margin: -15px -20px; padding: 15px 20px 15px 58px; }
+  .slick-top .slick-dots { bottom: 15px; } }
 
 @media (max-width: 768px) { h1, .h1 { font-size: 36px; font-size: 2.25rem; }
   h2, .h2 { font-size: 30px; font-size: 1.875rem; }
@@ -2224,7 +2240,11 @@ RESPONSIVE STYLES ----------------------- */
   .slick-shadows .slick-slide:not(.slick-active) { opacity: 1; }
   .card { box-shadow: 0px 0px 8px rgba(124, 124, 124, 0.15); }
   .catalog-per-page { margin-right: 0; }
-  .catalog-style { display: none; } }
+  .catalog-style { display: none; }
+  .col-sidebar > :last-child { margin-bottom: 0; }
+  .profile-data-link { bottom: 2px; }
+  .ui-menu { padding-top: 22px; }
+  .ui-menu-title { margin-bottom: 15px; } }
 
 @media (max-width: 576px) { .newsletters { margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px; }
   .main-cat { position: relative; padding: 20px 10px 20px 15px; }
@@ -2232,7 +2252,8 @@ RESPONSIVE STYLES ----------------------- */
   .main-cat-link { font-size: 0; }
   .main-cat-counter { margin-left: 0; padding: 2px 8px; border-radius: 0; position: absolute; right: 0; bottom: 0; }
   .slick-partners { margin-left: -8px; margin-right: -8px; }
-  .slick-partner { padding: 0px 8px; }
+  .slick-partner { padding: 0px 8px; height: 64px; }
+  .slick-partner img { max-height: 64px; }
   .main-article { font-size: 14px; font-size: 0.875rem; }
   .main-article-title { font-size: 18px; font-size: 1.125rem; }
   .main-article-txt { margin-bottom: 15px; }
@@ -2244,7 +2265,8 @@ RESPONSIVE STYLES ----------------------- */
   .news-item-body { padding-left: 15px; }
   .node-panel { padding: 15px; }
   .node-panel .flex { display: block; }
-  .node-date { margin-bottom: 8px; } }
+  .node-date { margin-bottom: 8px; }
+  .slick-top .slick-dots { bottom: 10px; } }
 
 @media (max-width: 480px) { html { font-size: 15px; }
   h1, .h1 { font-size: 30px; font-size: 1.875rem; }

@@ -76,16 +76,6 @@ hr {
   border-top: 1px solid $border;
   overflow: hidden;
 }
-.img {
-	a {
-		border-bottom: 0;
-	}
-}
-.title {
-	a {
-		border-bottom: 0;
-	}
-}
 .title-throught {
 	position: relative;
 	text-align: center;
@@ -120,10 +110,11 @@ main table {
 		vertical-align: middle;
 	}
 }
-a img {
+.wrapper a img {
 	border: none;
 	display: block;
 	line-height: 0;
+	font-size: 0;
 }
 svg.sprite {
 	display: block;

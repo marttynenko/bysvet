@@ -493,6 +493,13 @@ jQuery(document).ready(function($){
 		}
 	})
 
+	$(document).on('mouseup',function(e){
+    if ($('.h-catalog').has(e.target).length === 0) {
+      $('.catalog-menu').removeClass('opened');
+      $('.catalog-toggler').removeClass('opened');
+    }
+	});
+
 
 	$(document).on('click','.filters-title',function(e){
 		e.preventDefault();

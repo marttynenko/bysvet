@@ -82,7 +82,9 @@
 	}
 }
 
-.main-grid {
+.main-grid,
+.mian-grid {
+	line-height: 0;
 
 	.row {
 		margin-left: -10px;
@@ -123,6 +125,11 @@
 	&-banner {
 		display: block;
 		line-height: 0;
+		background: $gray;
+
+		img {
+			margin: 0 auto;
+		}
 
 		// position: relative;
 		// height: 0;
@@ -152,6 +159,21 @@
 	// 		object-position: center;
 	// 	}
 	// }
+}
+.grid-mini {
+	.banner {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			object-fit: cover;
+			object-position: center;
+			min-height: 100%;
+			min-width: 100%;
+		}
+	}
 }
 .grid-card {
 	display: block;
@@ -1050,6 +1072,15 @@ CARD ---------------------- */
 		display: block;
 		margin: 0 auto;
 	}
+	.slick-dots {
+		button {
+			width: 48px;
+			height: 8px;
+			background: $gray;
+			border-radius: 0;
+		}
+		
+	}
 }
 
 .ui-variants {
@@ -1147,16 +1178,16 @@ CARD ---------------------- */
 	margin-bottom: 80px;
 }
 .col-related-banner {
-	-ms-flex: 0 0 20%;
-	flex: 0 0 20%;
-	max-width: 20%;
+	-ms-flex: 0 0 20.49%;
+	flex: 0 0 20.49%;
+	max-width: 20.49%;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 .col-related-carousel {
-	-ms-flex: 0 0 80%;
-	flex: 0 0 80%;
-	max-width: 80%;
+	-ms-flex: 0 0 79.51%;
+	flex: 0 0 79.51%;
+	max-width: 79.51%;
 }
 .goods-block {
 	margin-bottom: 80px;
@@ -1435,16 +1466,15 @@ CARD ---------------------- */
 		&:after {
 			content: "";
 			position: absolute;
-			left: 1px;
-			top: 0px;
-			width: 22px;
-			height: 22px;
-			border-radius: 11px;
+			left: 6px;
+			top: 5px;
+			width: 12px;
+			height: 12px;
+			border-radius: 6px;
 			opacity: 0;
 			transform: scale(0.75);
 			transition: opacity .1s, transform .1s;
 			background: #000;
-			box-shadow: inset 0px 0px 0px 5px #FFF;
 			box-sizing: border-box;
 		}
 	}

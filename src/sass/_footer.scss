@@ -223,6 +223,9 @@ footer.footer {
       }
     }
   }
+  .f-complaints {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 576px) {
@@ -237,6 +240,12 @@ footer.footer {
     &-item {
       margin-bottom: 10px;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .f-contacts-item-icon {
+    top: -2px;
   }
 }
 
